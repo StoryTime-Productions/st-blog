@@ -1,0 +1,17 @@
+[
+    {
+        "title": "My First Blog Post",
+        "content": "This is the content of my first blog post.",
+        "date": "2024-11-24"
+    },
+    {
+        "title": "Another Interesting Post",
+        "content": "Here is some more interesting content for my second blog post.",
+        "date": "2024-11-23"
+    },
+    {
+        "title": "Exploring New Ideas",
+        "content": "In this post, I will explore some new and exciting ideas I’ve been thinking about lately.",
+        "date": "2024-11-22"
+    }
+]
