@@ -1,1 +1,1 @@
-Sitemap: https://storytime-productions.github.io/st-blog/sitemap.xml
+Sitemap: http://localhost:4000/st-blog/sitemap.xml
