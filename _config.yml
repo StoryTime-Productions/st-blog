@@ -26,20 +26,13 @@ github_username: StoryTime-Productions
 
 # Build settings
 markdown: kramdown
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 
-# Sass configuration to suppress deprecation warnings
+# Sass configuration (GitHub Pages compatible)
 sass:
-  style: compressed
   sass_dir: _sass
-  quiet_deps: true
-  verbose: false
-  silence_deprecations:
-    - "legacy-js-api"
-    - "import"
-    - "global-builtin"
-    - "color-module"
+  style: compressed
 
 # Site favicon (but no logo in navbar)
 favicon: "/assets/images/favicon.svg"
@@ -66,12 +59,13 @@ exclude:
   - vendor/ruby/
   - blog/
 
-# Plugins (previously gems:)
+# Plugins (GitHub Pages compatible)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 author:
   name   : "StoryTime Productions"
