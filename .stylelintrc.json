@@ -1,0 +1,57 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "scss/dollar-variable-pattern": "^[a-z][a-zA-Z0-9-]*$",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/at-import-no-partial-leading-underscore": null,
+    "scss/at-import-partial-extension": null,
+    "import-notation": null,
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "mix",
+          "lighten", 
+          "darken",
+          "percentage",
+          "red",
+          "green",
+          "blue"
+        ]
+      }
+    ],
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "shorthand-property-no-redundant-values": null,
+    "custom-property-pattern": null,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "comment-pattern": "^(?!.*---).*"
+  },
+  "ignoreFiles": [
+    "_site/**/*",
+    "node_modules/**/*"
+  ],
+  "overrides": [
+    {
+      "files": ["assets/css/main.scss"],
+      "rules": {
+        "comment-pattern": null,
+        "no-invalid-position-at-import-rule": null
+      }
+    }
+  ]
+}
