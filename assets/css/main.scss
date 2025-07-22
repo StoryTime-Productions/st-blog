@@ -1,0 +1,222 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// StoryTime Productions Custom Variables
+$primary: #725976;
+$primary-light: #eccff0;
+$primary-dark: #0d0010;
+$secondary: #d3add9;
+$secondary-light: #ffffff;
+$secondary-dark: #5c3c62;
+$tertiary: #b092b5;
+$tertiary-dark: #3e2643;
+$surface: #1d141c;
+$surface-dark: #000000;
+$badge: #8A3057;
+
+// Override Minimal Mistakes dark skin variables
+$background-color: $surface !default;
+$text-color: $secondary-light !default;
+$muted-text-color: mix(#fff, $background-color, 50%) !default;
+$primary-color: $primary !default;
+$border-color: mix(#fff, $background-color, 20%) !default;
+$code-background-color: mix(#000, $background-color, 15%) !default;
+$code-background-color-dark: mix(#000, $background-color, 20%) !default;
+$form-background-color: mix(#000, $background-color, 15%) !default;
+$footer-background-color: $primary-dark !default;
+
+// Link colors
+$link-color: $secondary !default;
+$link-color-hover: $secondary-light !default;
+$link-color-visited: mix($secondary, $background-color, 50%) !default;
+
+// Navigation colors
+$masthead-link-color: $secondary-light !default;
+$masthead-link-color-hover: $secondary !default;
+$navicon-link-color-hover: $secondary !default;
+
+@import "minimal-mistakes/skins/dark"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Custom StoryTime Productions styling
+.masthead {
+  background-color: $primary !important;
+  border-bottom: 1px solid $secondary-dark;
+}
+
+.site-title {
+  font-weight: 700;
+  color: $secondary-light !important;
+}
+
+.site-subtitle {
+  color: $secondary !important;
+}
+
+.author__avatar img {
+  border: 3px solid $secondary;
+  border-radius: 0 !important; // Remove circular crop
+  width: 100% !important; // Full width
+  height: auto !important; // Maintain aspect ratio
+  max-width: 200px; // Reasonable maximum width
+  object-fit: contain !important; // Don't crop the image
+}
+
+.author__bio {
+  color: $secondary-light;
+}
+
+.author__urls a {
+  color: $secondary;
+  
+  &:hover {
+    color: $secondary-light;
+  }
+}
+
+// Page title styling
+.page__title {
+  color: $secondary-light;
+  border-bottom: 2px solid $secondary;
+  padding-bottom: 0.5rem;
+}
+
+// Archive item styling
+.archive__item-title {
+  color: $secondary-light;
+  
+  a {
+    color: $secondary;
+    
+    &:hover {
+      color: $secondary-light;
+    }
+  }
+}
+
+// Button styling
+.btn {
+  background-color: $secondary;
+  color: $surface-dark;
+  border: 1px solid $secondary;
+  
+  &:hover {
+    background-color: $secondary-light;
+    color: $surface-dark;
+  }
+}
+
+.btn--primary {
+  background-color: $primary;
+  color: $secondary-light;
+  border: 1px solid $primary;
+  
+  &:hover {
+    background-color: $primary-light;
+    color: $surface-dark;
+  }
+}
+
+// Footer styling
+.page__footer {
+  background-color: $primary-dark !important;
+  border-top: 2px solid $secondary-dark;
+}
+
+.page__footer-copyright {
+  color: $secondary-light;
+}
+
+.page__footer-follow a {
+  color: $secondary;
+  
+  &:hover {
+    color: $secondary-light;
+  }
+}
+
+// Code block styling
+.highlight {
+  background-color: $surface-dark;
+  border: 1px solid $secondary-dark;
+  border-radius: 4px;
+}
+
+// Table styling
+table {
+  border: 1px solid $secondary-dark;
+  
+  th {
+    background-color: $primary;
+    color: $secondary-light;
+    border-bottom: 2px solid $secondary-dark;
+  }
+  
+  td {
+    border-bottom: 1px solid $secondary-dark;
+  }
+}
+
+// Pagination styling
+.pagination {
+  a {
+    background-color: $primary;
+    color: $secondary-light;
+    border: 1px solid $secondary-dark;
+    
+    &:hover {
+      background-color: $secondary;
+      color: $surface-dark;
+    }
+  }
+  
+  .current {
+    background-color: $secondary;
+    color: $surface-dark;
+  }
+}
+
+// Tag and category styling
+.page__taxonomy {
+  .sep {
+    color: $secondary;
+  }
+}
+
+.taxonomy__index {
+  a {
+    color: $secondary;
+    
+    &:hover {
+      color: $secondary-light;
+    }
+  }
+}
+
+// Custom Montreal/Quebec styling elements
+.montreal-accent {
+  border-left: 4px solid #FF6B6B; // Quebec flag red
+  padding-left: 1rem;
+  background: linear-gradient(135deg, rgba(114, 89, 118, 0.1) 0%, rgba(93, 60, 98, 0.1) 100%);
+}
+
+// Game development themed elements
+.game-dev-highlight {
+  background: linear-gradient(135deg, $primary 0%, $secondary-dark 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  color: $secondary-light;
+  margin: 1rem 0;
+}
+
+.unity-badge {
+  background-color: $badge;
+  color: $secondary-light;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+}

@@ -1,0 +1,786 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.2 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Unity Optimization Techniques for Montreal Indie Developers - StoryTime Productions Dev Blog</title>
+<meta name="description" content="As an indie game development studio in Montreal, performance optimization is crucial for our Unity projects. With limited resources, we need to ensure our games run smoothly across various platforms while maintaining visual quality.">
+
+
+  <meta name="author" content="StoryTime Productions">
+  
+  <meta property="article:author" content="StoryTime Productions">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="StoryTime Productions Dev Blog">
+<meta property="og:title" content="Unity Optimization Techniques for Montreal Indie Developers">
+<meta property="og:url" content="http://localhost:4000/technical/unity/optimization/exploring-new-ideas/">
+
+
+  <meta property="og:description" content="As an indie game development studio in Montreal, performance optimization is crucial for our Unity projects. With limited resources, we need to ensure our games run smoothly across various platforms while maintaining visual quality.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-11-22T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/technical/unity/optimization/exploring-new-ideas/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="StoryTime Productions Dev Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/st-logo.png" alt="StoryTime Productions Dev Blog"></a>
+        
+        <a class="site-title" href="/">
+          StoryTime Productions Dev Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/st-logo.png" alt="StoryTime Productions" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">StoryTime Productions</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Indie game studio crafting immersive Unity experiences from Montreal. Students turned developers exploring horror, sci-fi &amp; arcade genres. 🎮🇨🇦</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Montreal, Quebec, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://storytime-productions.github.io" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-gamepad" aria-hidden="true"></i><span class="label">Portfolio</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/StoryTime-Productions" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="mailto:brommitment@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i><span class="label">Contact</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Unity Optimization Techniques for Montreal Indie Developers">
+    <meta itemprop="description" content="As an indie game development studio in Montreal, performance optimization is crucial for our Unity projects. With limited resources, we need to ensure our games run smoothly across various platforms while maintaining visual quality.">
+    <meta itemprop="datePublished" content="2024-11-22T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/technical/unity/optimization/exploring-new-ideas/" itemprop="url">Unity Optimization Techniques for Montreal Indie Developers
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>As an indie game development studio in Montreal, performance optimization is crucial for our Unity projects. With limited resources, we need to ensure our games run smoothly across various platforms while maintaining visual quality.</p>
+
+<h2 id="our-optimization-journey">Our Optimization Journey</h2>
+
+<div class="montreal-accent">
+Working from Montreal gives us a unique perspective on optimization - we need to consider both high-end gaming setups and mobile devices to reach our diverse Canadian and international audience.
+</div>
+
+<h2 id="key-optimization-strategies">Key Optimization Strategies</h2>
+
+<h3 id="1-texture-compression-and-atlasing">1. <strong>Texture Compression and Atlasing</strong></h3>
+
+<p>One of our most effective techniques involves intelligent texture management:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Custom texture streaming for our horror games</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">OptimizedTextureManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> 
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">Serializable</span><span class="p">]</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">TextureSettings</span> 
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="n">Texture2D</span> <span class="n">texture</span><span class="p">;</span>
+        <span class="k">public</span> <span class="n">TextureFormat</span> <span class="n">mobileFormat</span> <span class="p">=</span> <span class="n">TextureFormat</span><span class="p">.</span><span class="n">ASTC_6x6</span><span class="p">;</span>
+        <span class="k">public</span> <span class="n">TextureFormat</span> <span class="n">desktopFormat</span> <span class="p">=</span> <span class="n">TextureFormat</span><span class="p">.</span><span class="n">DXT5</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">maxSize</span> <span class="p">=</span> <span class="m">1024</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="p">[</span><span class="n">SerializeField</span><span class="p">]</span> <span class="k">private</span> <span class="n">TextureSettings</span><span class="p">[]</span> <span class="n">gameTextures</span><span class="p">;</span>
+    
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="nf">OptimizeTexturesForPlatform</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OptimizeTexturesForPlatform</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="n">TextureFormat</span> <span class="n">targetFormat</span> <span class="p">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">isMobilePlatform</span> <span class="p">?</span> 
+            <span class="n">TextureFormat</span><span class="p">.</span><span class="n">ASTC_6x6</span> <span class="p">:</span> <span class="n">TextureFormat</span><span class="p">.</span><span class="n">DXT5</span><span class="p">;</span>
+            
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">setting</span> <span class="k">in</span> <span class="n">gameTextures</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="nf">ApplyCompressionSettings</span><span class="p">(</span><span class="n">setting</span><span class="p">.</span><span class="n">texture</span><span class="p">,</span> <span class="n">targetFormat</span><span class="p">,</span> <span class="n">setting</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-lod-systems-for-complex-environments">2. <strong>LOD Systems for Complex Environments</strong></h3>
+
+<p>For games like <strong>Prochaine Station</strong>, we implement custom LOD systems:</p>
+
+<div class="game-dev-highlight">
+<ul>
+<li><span class="unity-badge">LOD 0</span> Full detail metro stations (0-15m)</li>
+<li><span class="unity-badge">LOD 1</span> Reduced geometry (15-30m)</li>
+<li><span class="unity-badge">LOD 2</span> Simplified textures (30-50m)</li>
+<li><span class="unity-badge">LOD 3</span> Billboard/imposter (50m+)</li>
+</ul>
+</div>
+
+<h3 id="3-memory-pool-management">3. <strong>Memory Pool Management</strong></h3>
+
+<p>For action games like <strong>ArgonAssault</strong>, object pooling is essential:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Laser projectile pooling system</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">LaserPool</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> 
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">SerializeField</span><span class="p">]</span> <span class="k">private</span> <span class="n">GameObject</span> <span class="n">laserPrefab</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">SerializeField</span><span class="p">]</span> <span class="k">private</span> <span class="kt">int</span> <span class="n">poolSize</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+    
+    <span class="k">private</span> <span class="n">Queue</span><span class="p">&lt;</span><span class="n">GameObject</span><span class="p">&gt;</span> <span class="n">laserPool</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="p">&lt;</span><span class="n">GameObject</span><span class="p">&gt;();</span>
+    
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="nf">InitializePool</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">InitializePool</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">poolSize</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> 
+        <span class="p">{</span>
+            <span class="n">GameObject</span> <span class="n">laser</span> <span class="p">=</span> <span class="nf">Instantiate</span><span class="p">(</span><span class="n">laserPrefab</span><span class="p">);</span>
+            <span class="n">laser</span><span class="p">.</span><span class="nf">SetActive</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+            <span class="n">laserPool</span><span class="p">.</span><span class="nf">Enqueue</span><span class="p">(</span><span class="n">laser</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="n">GameObject</span> <span class="nf">GetLaser</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">laserPool</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="n">GameObject</span> <span class="n">laser</span> <span class="p">=</span> <span class="n">laserPool</span><span class="p">.</span><span class="nf">Dequeue</span><span class="p">();</span>
+            <span class="n">laser</span><span class="p">.</span><span class="nf">SetActive</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">laser</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// Fallback: create new instance</span>
+        <span class="k">return</span> <span class="nf">Instantiate</span><span class="p">(</span><span class="n">laserPrefab</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ReturnLaser</span><span class="p">(</span><span class="n">GameObject</span> <span class="n">laser</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="n">laser</span><span class="p">.</span><span class="nf">SetActive</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+        <span class="n">laserPool</span><span class="p">.</span><span class="nf">Enqueue</span><span class="p">(</span><span class="n">laser</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="montreal-specific-considerations">Montreal-Specific Considerations</h2>
+
+<h3 id="cold-weather-testing">Cold Weather Testing</h3>
+<p>Montreal winters provide natural stress testing opportunities:</p>
+<ul>
+  <li>Battery performance on mobile devices in cold conditions</li>
+  <li>Thermal throttling behavior</li>
+  <li>Screen responsiveness in low temperatures</li>
+</ul>
+
+<h3 id="bilingual-ui-optimization">Bilingual UI Optimization</h3>
+<p>Supporting French and English requires:</p>
+<ul>
+  <li>Dynamic text sizing systems</li>
+  <li>Font atlas optimization for accented characters</li>
+  <li>Layout flexibility for different text lengths</li>
+</ul>
+
+<h3 id="local-community-feedback">Local Community Feedback</h3>
+<p>Our Montreal gaming community provides valuable feedback:</p>
+<ul>
+  <li>Unity user group meetups at Concordia University</li>
+  <li>Local game jams and testing sessions</li>
+  <li>Diverse hardware testing across economic demographics</li>
+</ul>
+
+<h2 id="performance-metrics-that-matter">Performance Metrics That Matter</h2>
+
+<p>For our games, we target:</p>
+<ul>
+  <li><strong>60 FPS</strong> on modern smartphones (iPhone 12+, Galaxy S21+)</li>
+  <li><strong>30 FPS minimum</strong> on older devices (iPhone X, Galaxy S10)</li>
+  <li><strong>&lt; 2GB RAM</strong> usage on mobile platforms</li>
+  <li><strong>&lt; 5-second</strong> loading times between levels</li>
+</ul>
+
+<h2 id="tools-we-use">Tools We Use</h2>
+
+<h3 id="unity-profiler-integration">Unity Profiler Integration</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Custom profiling for our games</span>
+<span class="cp">#if UNITY_EDITOR || DEVELOPMENT_BUILD
+</span><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">StoryTimeProfiler</span> 
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="nf">Conditional</span><span class="p">(</span><span class="s">"UNITY_EDITOR"</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">BeginSample</span><span class="p">(</span><span class="kt">string</span> <span class="n">sampleName</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Profiling</span><span class="p">.</span><span class="n">Profiler</span><span class="p">.</span><span class="nf">BeginSample</span><span class="p">(</span><span class="s">$"StoryTime.</span><span class="p">{</span><span class="n">sampleName</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="nf">Conditional</span><span class="p">(</span><span class="s">"UNITY_EDITOR"</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">EndSample</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Profiling</span><span class="p">.</span><span class="n">Profiler</span><span class="p">.</span><span class="nf">EndSample</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+
+<ol>
+  <li><strong>Profile Early, Profile Often</strong>: Don’t wait until the end of development</li>
+  <li><strong>Target Platform First</strong>: Optimize for your lowest-spec target device</li>
+  <li><strong>Community Testing</strong>: Local Montreal developers provide honest feedback</li>
+  <li><strong>Seasonal Considerations</strong>: Account for Quebec’s extreme temperature variations</li>
+</ol>
+
+<h2 id="whats-next">What’s Next</h2>
+
+<p>In upcoming posts, we’ll explore:</p>
+<ul>
+  <li>Custom shader optimization for horror atmosphere</li>
+  <li>AI pathfinding optimization for zombie hordes</li>
+  <li>Cross-platform input handling</li>
+  <li>WebGL deployment strategies</li>
+</ul>
+
+<p>Performance optimization is an ongoing journey, especially for indie studios. Every frame counts when you’re trying to create immersive experiences on a budget!</p>
+
+<p><em>Keep optimizing,</em><br />
+<em>The StoryTime Productions Team</em> ⚡</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#indie-game-development" class="page__taxonomy-item p-category" rel="tag">indie game development</a><span class="sep">, </span>
+    
+      <a href="/tags/#mobile-development" class="page__taxonomy-item p-category" rel="tag">mobile development</a><span class="sep">, </span>
+    
+      <a href="/tags/#montreal" class="page__taxonomy-item p-category" rel="tag">montreal</a><span class="sep">, </span>
+    
+      <a href="/tags/#performance" class="page__taxonomy-item p-category" rel="tag">performance</a><span class="sep">, </span>
+    
+      <a href="/tags/#unity-engine" class="page__taxonomy-item p-category" rel="tag">unity engine</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#optimization" class="page__taxonomy-item p-category" rel="tag">optimization</a><span class="sep">, </span>
+    
+      <a href="/categories/#technical" class="page__taxonomy-item p-category" rel="tag">technical</a><span class="sep">, </span>
+    
+      <a href="/categories/#unity" class="page__taxonomy-item p-category" rel="tag">unity</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-11-22T00:00:00-05:00">November 22, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://x.com/intent/tweet?text=Unity+Optimization+Techniques+for+Montreal+Indie+Developers%20http%3A%2F%2Flocalhost%3A4000%2Ftechnical%2Funity%2Foptimization%2Fexploring-new-ideas%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftechnical%2Funity%2Foptimization%2Fexploring-new-ideas%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/technical/unity/optimization/exploring-new-ideas/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=Unity+Optimization+Techniques+for+Montreal+Indie+Developers%20http%3A%2F%2Flocalhost%3A4000%2Ftechnical%2Funity%2Foptimization%2Fexploring-new-ideas%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/game%20development/unity/horror/another-interesting-post/" class="pagination--pager" title="Building Prochaine Station: Horror Game Design in Unity">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/studio/montreal/indie%20development/montreal-storytime-journey/" rel="permalink">From Montreal to the World: The StoryTime Productions Journey
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Bonjour from the beautiful city of Montreal! 🍁 As we launch our official dev blog, we wanted to share the story behind StoryTime Productions and what drives ...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/announcement/studio/my-first-blog-post/" rel="permalink">Welcome to StoryTime Productions Dev Blog
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to the StoryTime Productions Developer Blog! We’re thrilled to launch this platform where we’ll be sharing insights from our game development journey...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/game%20development/unity/horror/another-interesting-post/" rel="permalink">Building Prochaine Station: Horror Game Design in Unity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">One of our most ambitious projects at StoryTime Productions is Prochaine Station, a psychological horror adventure that transforms the familiar Montreal metr...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/StoryTime-Productions" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://storytime-productions.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-gamepad" aria-hidden="true"></i> Portfolio</a></li>
+        
+      
+        
+          <li><a href="mailto:brommitment@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Contact</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">StoryTime Productions Dev Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
