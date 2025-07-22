@@ -4,7 +4,7 @@ author_profile: true
 excerpt: "Behind the screen insights from Montreal's indie game development scene. Unity tutorials, technical deep-dives, and the creative journey of StoryTime Productions."
 ---
 
-## Welcome to the StoryTime Productions Dev Blog
+## Welcome to the ./dev blog!
 
 <div class="game-dev-highlight">
 Greetings from Montreal! We're StoryTime Productions, an indie game development studio passionate about creating immersive Unity experiences. This blog is our window into the development process - sharing technical insights, creative challenges, and the unique perspective of building games from Canada's cultural hub.

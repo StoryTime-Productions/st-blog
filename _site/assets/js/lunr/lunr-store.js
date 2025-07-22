@@ -11,8 +11,8 @@ var store = [{
         "url": "/game%20development/unity/horror/another-interesting-post/",
         "teaser": null
       },{
-        "title": "Welcome to StoryTime Productions Dev Blog",
-        "excerpt":"Welcome to the StoryTime Productions Developer Blog! We’re thrilled to launch this platform where we’ll be sharing insights from our game development journey here in Montreal, Quebec. Who We Are StoryTime Productions is a passionate collective of game developers, engineers, and multimedia specialists based in the beautiful city of Montreal....","categories": ["announcement","studio"],
+        "title": "Welcome to StoryTime Productions ./dev blog",
+        "excerpt":"Welcome to the StoryTime Productions ./dev blog! We’re thrilled to launch this platform where we’ll be sharing insights from our game development journey here in Montreal, Quebec. Who We Are StoryTime Productions is a passionate collective of game developers, engineers, and multimedia specialists based in the beautiful city of Montreal....","categories": ["announcement","studio"],
         "tags": ["welcome","game development","unity","montreal"],
         "url": "/announcement/studio/my-first-blog-post/",
         "teaser": null

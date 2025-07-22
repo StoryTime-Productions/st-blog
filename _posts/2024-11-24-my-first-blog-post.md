@@ -1,5 +1,5 @@
 ---
-title: "Welcome to StoryTime Productions Dev Blog"
+title: "Welcome to StoryTime Productions ./dev blog"
 date: 2024-11-24
 categories:
   - announcement
@@ -11,7 +11,7 @@ tags:
   - montreal
 ---
 
-Welcome to the StoryTime Productions Developer Blog! We're thrilled to launch this platform where we'll be sharing insights from our game development journey here in Montreal, Quebec.
+Welcome to the StoryTime Productions ./dev blog! We're thrilled to launch this platform where we'll be sharing insights from our game development journey here in Montreal, Quebec.
 
 ## Who We Are
 

@@ -42,26 +42,60 @@ $navicon-link-color-hover: $secondary !default;
 
 // Custom StoryTime Productions styling
 .masthead {
-  background-color: $primary !important;
-  border-bottom: 1px solid $secondary-dark;
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%) !important;
+  border-bottom: 1px solid $border-color;
+  padding: 1rem 0;
+}
+
+.masthead__inner-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .site-title {
   font-weight: 700;
   color: $secondary-light !important;
+  font-size: 1.5rem;
+  text-decoration: none !important;
+  
+  &:hover {
+    color: $secondary !important;
+  }
 }
 
 .site-subtitle {
   color: $secondary !important;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
 
+// Breadcrumb styling
+.breadcrumbs {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid $border-color;
+  
+  a {
+    color: $secondary !important;
+    
+    &:hover {
+      color: $secondary-light !important;
+    }
+  }
+  
+  .current {
+    color: $secondary-light;
+  }
+}
+
+// Logo styling - full width instead of circular crop
 .author__avatar img {
-  border: 3px solid $secondary;
-  border-radius: 0 !important; // Remove circular crop
-  width: 100% !important; // Full width
-  height: auto !important; // Maintain aspect ratio
-  max-width: 200px; // Reasonable maximum width
-  object-fit: contain !important; // Don't crop the image
+  border-radius: 0 !important;
+  max-width: 80% !important;
+  height: auto !important;
 }
 
 .author__bio {
@@ -135,6 +169,10 @@ $navicon-link-color-hover: $secondary !default;
   &:hover {
     color: $secondary-light;
   }
+}
+
+.greedy-nav {
+    background-color: transparent !important;
 }
 
 // Code block styling
