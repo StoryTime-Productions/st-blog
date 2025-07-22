@@ -1,0 +1,38 @@
+{
+  "name": "storytime-productions-blog",
+  "version": "1.0.0",
+  "description": "StoryTime Productions Jekyll Blog",
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo 'Running Jekyll build to check for errors...' && bundle exec jekyll build --verbose",
+    "lint:check": "npm run lint",
+    "build": "bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve --livereload",
+    "clean": "bundle exec jekyll clean",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "jekyll",
+    "blog",
+    "storytime-productions",
+    "montreal"
+  ],
+  "author": "StoryTime Productions",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "lint-staged": {
+    "*.md": [
+      "echo 'Markdown files staged for commit'"
+    ],
+    "*.scss": [
+      "echo 'SCSS files staged - Jekyll build will validate syntax'"
+    ]
+  }
+}

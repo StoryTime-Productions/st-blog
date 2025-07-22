@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+echo "📁 Checking Jekyll build..."
+
+# Run Jekyll build to validate Sass and overall site integrity
+if bundle exec jekyll build --quiet; then
+    echo "✅ Jekyll build successful"
+else
+    echo "❌ Jekyll build failed - please fix errors before committing"
+    exit 1
+fi
+
+echo "✅ All pre-commit checks passed!"
