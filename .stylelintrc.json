@@ -16,7 +16,7 @@
       {
         "ignoreFunctions": [
           "mix",
-          "lighten", 
+          "lighten",
           "darken",
           "percentage",
           "red",
@@ -35,8 +35,12 @@
     "rule-empty-line-before": [
       "always-multi-line",
       {
-        "except": ["first-nested"],
-        "ignore": ["after-comment"]
+        "except": [
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
       }
     ],
     "comment-pattern": "^(?!.*---).*"
@@ -47,7 +51,9 @@
   ],
   "overrides": [
     {
-      "files": ["assets/css/main.scss"],
+      "files": [
+        "assets/css/main.scss"
+      ],
       "rules": {
         "comment-pattern": null,
         "no-invalid-position-at-import-rule": null

@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/st-blog/technical/unity/optimization/exploring-new-ideas/</loc>
-<lastmod>2024-11-22T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/st-blog/game%20development/unity/horror/another-interesting-post/</loc>
-<lastmod>2024-11-23T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/st-blog/announcement/studio/my-first-blog-post/</loc>
-<lastmod>2024-11-24T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/st-blog/studio/montreal/indie%20development/montreal-storytime-journey/</loc>
-<lastmod>2024-12-01T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/st-blog/about/</loc>
 </url>
 <url>
